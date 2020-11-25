@@ -4,6 +4,7 @@ Minimalistic Chrome extension - shows correct answers on quizizz.com.
 
 Quizizz advisor actually doesn't automatically solve your tasks, but shows you an answer before the task is solved. Automatic solving could be considered to add if requested by anyone in the future.
 
+Works on tests whose creator doesn't have an account!
 Works ONLY on live quizzes, that you join via code or link, e.g. https://quizizz.com/join?gc=679341&source=liveDashboard
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
