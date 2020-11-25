@@ -21,23 +21,22 @@ class Solver {
   private async getRoomHash() {
     const linkParams = new URLSearchParams(window.location.search);
     let roomCode = linkParams.get('gc');
-    let roomHash: string;
 
     if (!roomCode && window.location.pathname.includes(Solver.APP_PATH))
       roomCode = prompt('Enter join code (XXX XXX(X))', '');
 
     const init = {
-      'headers': {
+      headers: {
         'content-type': 'application/json'
       },
-      'body': `{"roomCode":"${roomCode}"}`,
-      'method': 'POST'
+      body: `{"roomCode": "${roomCode}"}`,
+      method: 'POST'
     }
 
     const roomHashResponse = await fetch(Solver.ROOM_HASH_PATH, init);
 
     const roomHashJson = await roomHashResponse.json();
-    roomHash = roomHashJson?.room?.hash;
+    const roomHash = roomHashJson?.room?.hash;
 
     if (!roomHash) return;
 
