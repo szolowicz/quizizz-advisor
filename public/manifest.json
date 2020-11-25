@@ -1,0 +1,30 @@
+{
+  "name": "Quizizz Advisor",
+  "description": "Shows correct answers on quizizz.com",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.quizizz.com/*"
+      ],
+      "js": [
+        "script.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    "popup/overlay.js"
+  ],
+  "browser_action": {
+    "default_popup": "popup/index.html"
+  },
+  "background": {
+    "scripts": ["discordinvite.js"],
+    "persistent": false
+  },
+  "icons": {
+    "128": "icon/logo.png"
+  }
+}

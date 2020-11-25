@@ -1,0 +1,11 @@
+#overlay {
+  font-weight: bold;
+  position: fixed;
+  z-index: 999;
+  top: 5em;
+  right: 1em;
+  padding: 6px;
+  color: #ffffff;
+  border: 2px dashed rgba(0, 0, 0, .2);
+  background: #ff0055;
+}
