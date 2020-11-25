@@ -29,9 +29,6 @@ Join our Discord! https://discord.gg/HPecVXeQrF
 
 ## Installing
 
-[Unofficial extension in Chrome web store](https://chrome.google.com/webstore/detail/quizizz-advisor/jlpadoppkllaajcjfflaalfbailkfhbm)
-(thanks to szoppracz07.ovh)
-
 1. **Go to the Releases page** (`then download newest version (.zip)`).
 2. **Unpack** ZIP file.
 3. **Go to the extensions page** (`chrome://extensions or Chrome menu -> More tools -> Extensions`).
