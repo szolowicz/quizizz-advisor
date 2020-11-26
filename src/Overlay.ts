@@ -18,10 +18,9 @@ export default class Overlay {
 
     this.createOverlayElement();
   }
-
   public setAnswer(answer: string) {
       const isImage = answer.includes("https")
-    this.overlay.innerHTML = `Answer(s): ${isImage ? insertInImgTag (answer) : answer}`;
+      this.overlay.innerHTML = isImage ? `Answer(s): <img src='${answer}'> </img>` : `Answer(s): ${answer}`;
     }
 
   private createOverlayElement(): void {
