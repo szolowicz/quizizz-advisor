@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "description": "",
   "scripts": {
-    "build:dev": "webpack --config=webpack.dev.conf.js",
-    "build": "webpack --config=webpack.prod.conf.js"
+    "build:dev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -43,7 +43,8 @@
     "ts-loader": "^8.0.11",
     "typescript": "^4.1.2",
     "webpack": "^5.6.0",
-    "webpack-cli": "^4.2.0"
+    "webpack-cli": "^4.2.0",
+    "webpack-merge": "^5.4.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5"

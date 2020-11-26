@@ -1,9 +1,7 @@
 const path = require('path');
 const copyPlugin = require('copy-webpack-plugin');
-const minifyHtmlWebpackPlugin = require('minify-html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
   entry: {
     'script': './src/index.ts',
     'popup/popup': './src/popup/popup.ts'
@@ -12,7 +10,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.ts$/i,
@@ -36,20 +34,8 @@ module.exports = {
   plugins: [
     new copyPlugin({
       patterns: [
-        {from: 'public', to: './'}
+        { from: './public', to: './' }
       ]
-    }),
-    new minifyHtmlWebpackPlugin({
-      afterBuild: true,
-      src: './public/popup',
-      dest: './dist/popup',
-      rules: {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-        removeComments: true,
-        minifyJS: true
-      }
     })
   ]
 };
