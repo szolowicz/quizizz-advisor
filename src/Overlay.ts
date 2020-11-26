@@ -19,8 +19,15 @@ export default class Overlay {
   }
 
   public setAnswer(answer: string) {
-    this.overlay.innerHTML = `Answer(s): ${answer}`;
-  }
+      let checkimg = answer.indexOf("https")
+      if(checkimg == -1){
+        answer = answer
+      }
+      else{
+       answer = '<img src=' + answer + '> </img>';
+      }
+      this.overlay.innerHTML = `Answer(s): ${answer}`;
+    }
 
   private createOverlayElement(): void {
     if (!window.location.pathname.startsWith(Overlay.APP_PATH)) return;
