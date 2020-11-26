@@ -1,5 +1,4 @@
 import './overlay.css';
-import './utils.ts';
 
 export default class Overlay {
   protected overlay: HTMLElement = null;
