@@ -1,4 +1,5 @@
 import './overlay.css';
+import './utils.ts';
 
 export default class Overlay {
   protected overlay: HTMLElement = null;
@@ -19,14 +20,8 @@ export default class Overlay {
   }
 
   public setAnswer(answer: string) {
-      let checkimg = answer.indexOf("https")
-      if(checkimg == -1){
-        answer = answer
-      }
-      else{
-       answer = '<img src=' + answer + '> </img>';
-      }
-      this.overlay.innerHTML = `Answer(s): ${answer}`;
+      const isImage = answer.includes("https")
+      this.overlay.innerHTML = isImage ? `Answer(s): ${insertInImgTag(answer)}` : `Answer(s): ${answer}`;
     }
 
   private createOverlayElement(): void {
