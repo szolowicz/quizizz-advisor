@@ -18,10 +18,13 @@ export default class Overlay {
     this.createOverlayElement();
   }
 
-    public setAnswer(answer: string) {
-      const isImage = answer.includes("https")
-      this.overlay.innerHTML = isImage ? `Answer(s): <img src='${answer}'> </img>` : `Answer(s): ${answer}`;
-    }
+  public setAnswer(answer: string) {
+    const isImage = answer.includes('https');
+
+    this.overlay.innerHTML = isImage
+      ? `Answer(s): <img src='${answer}'></img>`
+      : `Answer(s): ${answer}`;
+  }
 
   private createOverlayElement(): void {
     if (!window.location.pathname.startsWith(Overlay.APP_PATH)) return;
