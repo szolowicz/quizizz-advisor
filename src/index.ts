@@ -13,7 +13,9 @@ class Solver {
       this.getRoomHash();
     } catch (error) {
       console.error(error);
-      console.warn('The script may be out of date. Report the problem on Discord <https://discord.gg/HPecVXeQrF> or on Github issue.');
+      console.warn(
+        'The script may be out of date. Report the problem on Discord <https://discord.gg/HPecVXeQrF> or on Github issue.'
+      );
       return;
     }
   }
@@ -27,11 +29,11 @@ class Solver {
 
     const init = {
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
       },
       body: `{"roomCode": "${roomCode}"}`,
-      method: 'POST'
-    }
+      method: 'POST',
+    };
 
     const roomHashResponse = await fetch(Solver.ROOM_HASH_PATH, init);
 
@@ -44,28 +46,32 @@ class Solver {
   }
 
   private async getQuestionsAndAnswers(roomHash) {
-    const aqResponse = await fetch(`${Solver.QUESTIONS_AND_RESPONSES_PATH}${roomHash}`);
+    const aqResponse = await fetch(
+      `${Solver.QUESTIONS_AND_RESPONSES_PATH}${roomHash}`
+    );
     const aqJson = await aqResponse.json();
     const questions = aqJson.data.questions;
-    let answers: { q: string, a: string }[] = [];
+    const answers: { q: string; a: string }[] = [];
 
-    questions.forEach(question => {
+    questions.forEach((question) => {
       const structure = question.structure;
 
-      const question_string = structure.query.text.replace(/(<([^>]+)>)/ig, '');
+      const question_string = structure.query.text.replace(/(<([^>]+)>)/gi, '');
       const answer_string = getQuestionType(question);
 
-      answers.push({q: question_string, a: answer_string});
+      answers.push({ q: question_string, a: answer_string });
     });
 
     this.setAnswer(answers);
   }
 
-  private setAnswer(answers: { q: string, a: string }[]) {
+  private setAnswer(answers: { q: string; a: string }[]) {
     let currentQuestion;
 
     setInterval(() => {
-      currentQuestion = document.getElementsByClassName('resizeable question-text-color')[0];
+      currentQuestion = document.getElementsByClassName(
+        'resizeable question-text-color'
+      )[0];
       if (!currentQuestion) return;
 
       answers.forEach((answer) => {
