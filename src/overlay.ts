@@ -1,7 +1,7 @@
 import './overlay.css';
 
 export default class Overlay {
-  protected overlay: HTMLElement = null;
+  protected overlay: HTMLElement | undefined = undefined;
 
   private static readonly APP_PATH = '/join';
 
@@ -18,8 +18,10 @@ export default class Overlay {
     this.createOverlayElement();
   }
 
-  public setAnswer(answer: string) {
+  public setAnswer(answer: string): void {
     const isImage = answer.includes('https');
+
+    if (this.overlay === undefined) return;
 
     this.overlay.innerHTML = isImage
       ? `Answer(s): <img src='${answer}'></img>`
@@ -31,8 +33,8 @@ export default class Overlay {
 
     this.overlay = document.createElement('div');
     this.overlay.id = 'overlay';
-    this.overlay.innerText = `Answer(s): -`;
+    this.overlay.textContent = 'Answer(s): -';
 
-    document.body.appendChild(this.overlay);
+    document.body.append(this.overlay);
   }
 }
