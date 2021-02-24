@@ -842,10 +842,10 @@
     "@babel/helper-validator-option" "^7.12.17"
     "@babel/plugin-transform-typescript" "^7.13.0"
 
-"@babel/runtime@^7.11.2", "@babel/runtime@^7.13.0", "@babel/runtime@^7.8.4":
-  version "7.13.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.0.tgz#7f2cd0e2086626eea186a5a062e21e77ec0e45d0"
-  integrity sha512-himjPiVq1N4Eqv80uaIMdLYav1LWO51J7PwQkgp3z8N0v8cnaeP5kSgWH4hS6jvjjWAbh5tB5fVw+zuNyyQTYQ==
+"@babel/runtime@^7.11.2", "@babel/runtime@^7.13.6", "@babel/runtime@^7.8.4":
+  version "7.13.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.6.tgz#86e0fad6cbb46a680e21c1aa4748717a058d345a"
+  integrity sha512-Y/DEVhSQ91u27rxq7D0EH/sewS6+x06p/MgO1VppbDHMzYXLZrAR5cFjCom78e9RUw1BQAq6qJg6fXc/ep7glA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
