@@ -45,7 +45,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "copy-webpack-plugin": "^8.1.1",
-    "css-loader": "^5.2.4",
+    "css-loader": "^5.2.5",
     "eslint": "7",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard-with-typescript": "^20.0.0",
