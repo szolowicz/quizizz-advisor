@@ -61,7 +61,7 @@
     "lint-staged": "^11.0.1",
     "minify-html-webpack-plugin": "^1.1.6",
     "prettier": "^2.3.2",
-    "style-loader": "^3.1.0",
+    "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
